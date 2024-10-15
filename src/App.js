@@ -1,15 +1,21 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import CatNav from './components/CatNav';
-import MainComponent from './components/MainComponent';
-import SideNav from './components/SideNav';
 import TopNav from './components/TopNav';
+import LandingPage from './components';
+import ProductDetails from './components/ProductDetails';
+import Cart from './components/Cart';
 
 function App() {
   return (
     <div className="App">
       <TopNav />
       <CatNav />
-      <MainComponent />
+      <Routes>
+        <Route path='/' Component={LandingPage}/>
+        <Route path='/productDetails' Component={ProductDetails}/>
+        <Route path='/cart' Component={Cart}/>
+      </Routes>
     </div>
   );
 }
